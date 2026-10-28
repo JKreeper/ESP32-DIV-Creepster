@@ -4520,7 +4520,7 @@ void setup() {
   tft.setSwapBytes(true);
   tft.pushImage(0, 0, 240, 320, creepster_splash);
   tft.setSwapBytes(false);
-  delay(1800);
+  delay(3000);
 
   initSDCard();
 
