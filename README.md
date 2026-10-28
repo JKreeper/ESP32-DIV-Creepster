@@ -31,6 +31,8 @@ Complete project story, in-depth tutorials, and all the features in [Wiki](https
 
 > ⚡ **Skip the IDE** — flash directly from your browser at [cifertech.github.io/ESP32-DIV](https://cifertech.github.io/ESP32-DIV)
 
+> 🎃 **This is the Creepster fork.** The menu UI uses the Creepster font and there's a "The Creepster" boot splash. The browser flasher above installs the **stock** firmware, not this one — to get the Creepster build you must compile from source. See **[BUILD-NOTES.md](BUILD-NOTES.md)** for full build/flash steps, including the required `-zmuldefs` linker fix.
+
 <div>&nbsp;</div>
 
 <!-- About the Project -->
