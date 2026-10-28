@@ -13,6 +13,7 @@
 #include "shared.h"
 #include "utils.h"
 #include "Creepster.h"
+#include "splash.h"
 
 // ---- Creepster UI font integration ----------------------------------------
 // TFT_eSPI free fonts are selected with setFreeFont() (not setTextFont()) and,
@@ -4513,6 +4514,13 @@ void setup() {
 
   tft.fillScreen(TFT_BLACK);
   displayLogo(TFT_WHITE, 500);
+
+  // Creepster boot splash (240x320 RGB565 image from splash.h)
+  tft.fillScreen(TFT_BLACK);
+  tft.setSwapBytes(true);
+  tft.pushImage(0, 0, 240, 320, creepster_splash);
+  tft.setSwapBytes(false);
+  delay(1800);
 
   initSDCard();
 
