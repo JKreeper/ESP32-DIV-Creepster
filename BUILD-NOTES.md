@@ -52,10 +52,21 @@ V2 is an **ESP32-S3**:
 - **Board:** ESP32S3 Dev Module
 - **PSRAM:** OPI PSRAM
 - **USB CDC On Boot:** Enabled
-- **Flash Size:** 16MB (match your module)
-- **Partition Scheme:** one with enough app space (e.g. 16M Flash, 3MB APP)
+- **Flash Size:** match your module (V2 is usually 8MB or 16MB)
+- **Partition Scheme:** **Minimal SPIFFS (1.9MB APP with OTA / 190KB SPIFFS)** — see below
 
 Match the exact values from the upstream Wiki if in doubt.
+
+> **Partition Scheme matters — the default is too small.** This build is ~1.9 MB.
+> The default partition only gives the app ~1.31 MB, so you'll get:
+> ```
+> Sketch too big ... text section exceeds available space in board
+> ```
+> Fix: set **Partition Scheme** to **"Minimal SPIFFS (1.9MB APP with OTA/190KB
+> SPIFFS)"** — it fits the build and keeps the on-device **Update Firmware**
+> (SD/OTA) feature working. If a future change pushes you past ~1.97 MB, switch to
+> **"Huge APP (3MB No OTA/1MB SPIFFS)"** (more room, but the on-device Update
+> Firmware option stops working; USB flashing is unaffected).
 
 ---
 
